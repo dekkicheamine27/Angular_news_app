@@ -29,4 +29,5 @@ npm install
 ng serve
 
 # Navigate to http://localhost:4200/ in your browser to view the app
+# The default Api URL is http://127.0.0.1:8000/news/ depending on my backend 
 
