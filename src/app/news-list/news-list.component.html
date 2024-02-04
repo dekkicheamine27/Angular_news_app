@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">News</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex align-items-center">
+          <select class="form-select me-2" (change)="onCategoryChange($event)">
+            <option value="">All Category</option>
+            <option value="general">General</option>
+            <option value="technology">Technology</option>
+            <option value="health">health</option>
+            <option value="science">science</option>
+            <option value="sports">sports</option>
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <!-- other categories -->
+          </select>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <select class="form-select me-2" (change)="onSourceChange($event)">
+            <option value="">All Source</option>
+            <option value="CNN">CNN</option>
+            <option value="YouTube">YouTube</option>
+            <option value="NBCSports.com">NBC Sports</option>
+            <option value="Google News">Google News</option>
+
+            <!-- other sources -->
+          </select>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" [(ngModel)]="currentSearchTerm" (keyup.enter)="onSearch()" placeholder="Search..." name="search">
+        <button class="btn btn-outline-success me-2" type="button" (click)="onSearch()">Search</button>
+        <button class="btn btn-outline-secondary" type="button" (click)="resetSearch()">Reset</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="container mt-5">
+  <!-- Pagination buttons -->
+  <div class="d-flex justify-content-between mb-4">
+    <button class="btn btn-outline-primary" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1"> < Previous</button>
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <button class="btn btn-outline-primary" (click)="goToPage(currentPage + 1)" [disabled]="!hasNextPage">Next > </button>
+  </div>
+
+
+  <!-- News Items -->
+  <div class="row">
+    <div *ngFor="let a of newsItems" class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3">
+      <div class="card">
+        <img src="{{a.image_url}}" class="card-img-top" alt="{{a.title}}">
+        <div class="card-body">
+          <h5 class="card-title">{{a.title}}</h5>
+          <a href="{{a.url}}" target="_blank" class="btn btn-dark btn-sm">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
