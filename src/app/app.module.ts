@@ -14,7 +14,7 @@ import { NewsListComponent } from './news-list/news-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule.withFetch(),
     FormsModule
 
   ],
