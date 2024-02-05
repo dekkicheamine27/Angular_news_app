@@ -2,11 +2,10 @@
 
 ## Overview
 
-This Angular News App is a dynamic, responsive web application designed to fetch and display the latest news from various sources. Built with Angular, it leverages modern web technologies to provide users with real-time news updates, categorized by interest areas such as technology, sports, and entertainment. 
+This Angular News App is a dynamic, responsive web application designed to fetch and display the latest news. Built with Angular, categorized by interest areas such as technology, sports, and entertainment. 
 
 ## Features
 
-- Real-time news updates from multiple sources
 - Categorized news sections for targeted interests
 - Responsive design for optimal viewing on all devices
 - Search functionality to find news articles by keyword
